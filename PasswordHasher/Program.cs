@@ -2,9 +2,9 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
-using A000165JWT.Data;
-using A000165JWT.Models;
+
 using IdentityModel;
+using IdentityServerJwtService.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +20,7 @@ namespace PasswordHasher
         {
             var services = new ServiceCollection();
             services.AddDbContext<ApplicationDbContext>(options =>
-               options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=A000165JWT;Trusted_Connection=True;MultipleActiveResultSets=true"));
+               options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=A000165Identity;Trusted_Connection=True;MultipleActiveResultSets=true"));
             Console.WriteLine("DbContextAccesedfromth console.");
             services.AddLogging();
             services.AddIdentity<ApplicationUser, IdentityRole>()
