@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
-namespace A000165JWT.Controllers
+namespace IdentityServerJwtService.Controllers
 {
     [SecurityHeaders]
     [AllowAnonymous]

@@ -34,6 +34,20 @@ namespace IdentityServerJwtService
                 .AddDefaultTokenProviders();
 
             services.AddControllersWithViews();
+
+            var builder = services.AddIdentityServer(options =>
+            {
+                options.Events.RaiseErrorEvents = true;
+                options.Events.RaiseInformationEvents = true;
+                options.Events.RaiseFailureEvents = true;
+                options.Events.RaiseSuccessEvents = true;
+
+            })
+          .AddInMemoryIdentityResources(Config.GetIdentityResources())
+          .AddInMemoryApiResources(Config.GetApis())
+          .AddInMemoryClients(Config.GetClients())
+          .AddAspNetIdentity<ApplicationUser>()
+          .AddDeveloperSigningCredential();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
