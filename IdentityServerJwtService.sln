@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApi", "CoreApi\CoreApi.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordHasher", "PasswordHasher\PasswordHasher.csproj", "{3CBCF7F6-F413-42BC-87C5-714042DB25A4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{B304268B-487F-47C9-B8B1-826F473FEB77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3CBCF7F6-F413-42BC-87C5-714042DB25A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBCF7F6-F413-42BC-87C5-714042DB25A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBCF7F6-F413-42BC-87C5-714042DB25A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B304268B-487F-47C9-B8B1-826F473FEB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B304268B-487F-47C9-B8B1-826F473FEB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B304268B-487F-47C9-B8B1-826F473FEB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B304268B-487F-47C9-B8B1-826F473FEB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
