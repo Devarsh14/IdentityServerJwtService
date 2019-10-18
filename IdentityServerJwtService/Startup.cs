@@ -69,6 +69,8 @@ namespace IdentityServerJwtService
 
             app.UseRouting();
 
+            // if not configured, client will not be able to access discovery end point and wil give you 404 not found on discovery end point.
+            app.UseIdentityServer();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
