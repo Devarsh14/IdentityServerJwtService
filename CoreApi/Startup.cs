@@ -30,7 +30,33 @@ namespace CoreApi
             services.AddMvcCore()
                .AddAuthorization()
                 .AddNewtonsoftJson();
-        
+            //Initialize JWT Authentication
+            //services.AddAuthentication(options => {
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //}).AddJwtBearer(jwtBearerOptions =>
+            //{
+            //    jwtBearerOptions.TokenValidationParameters = new TokenValidationParameters()
+            //    {
+            //        ValidateIssuer = true,
+            //        ValidateAudience = true,
+            //        ValidateLifetime = true,
+            //        ValidateIssuerSigningKey = true,
+
+            //        ValidIssuer = "http://localhost:44352",
+            //        ValidAudience = "http://localhost:44352",
+            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("Secrets")["jwt"]))
+            //    };
+            //}
+            //);
+
+         services.AddAuthentication("Bearer")
+         .AddJwtBearer("Bearer", options =>
+         {
+             options.Authority = "https://localhost:44306";
+             options.RequireHttpsMetadata = false;
+             options.Audience = "api1";
+         });
 
 
         }
