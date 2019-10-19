@@ -26,7 +26,7 @@ namespace MvcClient
 
                     // Local development alwasy use http, in production use https need to further investigate the configuration. 
                     //https://stackoverflow.com/questions/53483600/unable-to-obtain-configuration-from-identityserver4
-                    options.Authority = "http://localhost:59125";
+                    options.Authority = "http://localhost:5000";
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "mvc";
