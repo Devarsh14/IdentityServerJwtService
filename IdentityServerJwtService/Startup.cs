@@ -48,6 +48,8 @@ namespace IdentityServerJwtService
           .AddInMemoryClients(Config.GetClients())
           .AddAspNetIdentity<ApplicationUser>()
           .AddDeveloperSigningCredential();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +70,7 @@ namespace IdentityServerJwtService
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCors(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             // if not configured, client will not be able to access discovery end point and wil give you 404 not found on discovery end point.
             app.UseIdentityServer();
             app.UseAuthorization();

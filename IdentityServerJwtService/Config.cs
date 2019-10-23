@@ -33,6 +33,28 @@ namespace IdentityServerJwtService
             {
                 new Client
                 {
+                    ClientName = "Tour Management",
+                    ClientId="tourmanagementclient",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    RequireConsent = false,
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris =new List<string>
+                    {
+                        "https://localhost:4200/signin-oidc",
+                        "https://localhost:4200/redirect-silentrenew"
+                    },
+                    AccessTokenLifetime = 180,
+                    PostLogoutRedirectUris = new[]{
+                        "https://localhost:4200/" },
+                    AllowedScopes = new []
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1",
+                    }
+                },
+                new Client
+                {
                     ClientId = "client",
 
                     // no interactive user, use the clientid/secret for authentication
